@@ -14,6 +14,7 @@ node {
 				  withMaven(maven:'Maven_3_3_9')
 				  {
 								 sh 'mvn -f pom.xml package'
+								 sh 'echo pwd'
 				  }
 	    
 	}
@@ -21,7 +22,7 @@ node {
         {
             ftpPublisher alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
                 [configName: 'FoodOrderApp', transfers: [
-                    [sourceFiles: "com/example/demo/0.0.1-SNAPSHOT/demo-0.0.1-SNAPSHOT.jar"]
+                    [remoteDirectory: "/var/lib/jenkins/" , sourceFiles: "/var/lib/jenkins/workspace/OAuth project/target/"]
                 ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
             ]
         }
