@@ -23,20 +23,20 @@ pipeline
                                                                                       }
                                                                            } 
                                                                         }
-                                                                        stage('Upload'){
-                                                                         {
+                                                                        stage('Upload')
+                                                                        {
                                                                         steps   
                                                                           { 
-                                                                         
-                                                                              ftpPublisher paramPublish: [parameterName:"publishing"] ,alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
+                                                                            agent any
+                                                                            {
+                                                                              ftpPublisher paramPublish: publishers: [
                                                                                   [configName: 'FOOD_ORDER', transfers: [
                                                                                       [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "/var/lib/jenkins/", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.exe, **.txt']
                                                                                   ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
                                                                               ]
                                                                             }
-                                                                           
-                                                                        }
+                                                                           }
                                                                         }
                              
                                            } 
-              }                        
+              }                
