@@ -22,7 +22,7 @@ node {
         {
             ftpPublisher alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
                 [configName: 'FoodOrderApp', transfers: [
-                    [remoteDirectory: "/var/lib/jenkins/" , sourceFiles: "/var/lib/jenkins/workspace/OAuth project/target/"]
+                    [sourceFiles: "/var/lib/jenkins/workspace/OAuth project/target/demo-0.0.1-SNAPSHOT.jar"]
                 ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
             ]
         }
