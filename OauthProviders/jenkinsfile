@@ -29,7 +29,7 @@ pipeline
                                                                           { 
                                                                             withMaven(maven:'Maven_3_3_9')
                                                                             {
-                                                                              ftpPublisher alwaysPublishFromMaster: false, continueOnError: false, failOnError: false, publishers: [
+                                                                              ftpPublisher  continueOnError: false, failOnError: false, publishers: [
                                                                                   [configName: 'FOOD_ORDER', transfers: [
                                                                                       [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "/var/lib/jenkins/", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.exe, **.txt']
                                                                                   ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
