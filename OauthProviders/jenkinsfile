@@ -20,7 +20,7 @@ node {
 	stage('Upload')
         {
             ftpPublisher alwaysPublishFromMaster: true, continueOnError: false, failOnError: false, publishers: [
-                [configName: 'FOOD_ORDER', transfers: [
+                [configName: 'FoodOrderApp', transfers: [
                     [asciiMode: false, cleanRemote: false, excludes: '', flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: "YOUR_DIRECTORY_HERE", remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**.exe, **.txt']
                 ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
             ]
