@@ -1,4 +1,4 @@
-node{
+
 pipeline
               {
                              agent any
@@ -26,7 +26,7 @@ pipeline
                                                                         }
                                                                         stage('Upload')
                                                                         {
-																
+																		node{
                                                                         steps   
                                                                           { 
                                                                             
@@ -36,10 +36,11 @@ pipeline
                                                                                   ], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true]
                                                                               ]
                                                                             }
+																			}
 																			
                                                                            
                                                                         }
                              
                                            } 
               }  
-}              
+              
