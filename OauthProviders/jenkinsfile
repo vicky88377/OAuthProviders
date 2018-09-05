@@ -14,7 +14,7 @@ node {
 				  withMaven(maven:'Maven_3_3_9')
 				  {
 								 sh 'mvn -f pom.xml package'
-								 sh 'scp /var/lib/jenkins/workspace/Customer_Service/target/empdemo.jar demovm@52.172.129.182:/home/demovm/''d
+			sh 'scp /var/lib/jenkins/workspace/Customer_Service/target/empdemo.jar demovm@52.172.129.182:/home/demovm/'
 				  }
 	    
 	}
